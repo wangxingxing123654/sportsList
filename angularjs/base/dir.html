@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../angular.js"></script>
+</head>
+<body>
+    <div my-dir name="baby"> world</div>
+</body>
+<script>
+      angular.module('app',[]).directive('myDir',function () {
+          return {
+              templateUrl:'boot.html',
+              transclude:true,
+              scope:{
+                  name:'<?name',
+              }
+
+          }
+      })
+</script>
+</html>

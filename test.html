@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sports">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/angularjs/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/angularjs/bootstrap.min.css">
+    <script src="angularjs/angular.js"></script>
+    <script src="sport.js"></script>
+    <script src="filter.js"></script>
+    <script src="productList.js"></script>
+    <title>Document</title>
+</head>
+
+<body ng-controller="sportCtrl">
+
+    <div class="navbar navbar-inverse">
+        <a href="#" class="navbar-brand">SPORTSTROE</a>
+    </div>
+    <div class="panel panel-default row" ng-controller="listCtrl">
+        <div class="col-xs-3">categories goes here
+            <a href="" class="btn btn-block btn-lg btn-default" ng-click="selectCategory()">Home</a>
+            <a href="" class="btn btn-block btn-lg btn-default" ng-repeat="item in data.products |unique:'category'" ng-click="selectCategory(item)">{{item}}</a>
+            <!-- 在这里。{{item}}指的就是过滤过后的后 -->
+        </div>
+        <div class="col-xs-8">products goes here
+            <div class="well" ng-repeat="item in data.products|filter:categoryFilterFn">
+                <h3>
+                    <strong>{{item.name}}</strong>
+                    <span class="pull-right label label-primary">{{item.price | currency:'￥'}}</span>
+                </h3>
+                <span class="lead">{{item.description}}</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

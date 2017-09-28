@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="locationApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base href="/pro-angular/angularjs/base/">
+    <link rel="stylesheet" href="../bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../angular.js"></script>
+</head>
+<body ng-controller="locationCtrl">
+<input type="text" ng-model="locaton" ng-model-options="{getterSetter:true}" class="form-control">
+<p>完整url路径: <span>{{absurl}}</span></p>
+<p>url路径(当前url#后面的内容,包括参数和哈希值): <span>{{url}}</span>
+    <button ng-click="changeUrl()">改变</button>
+</p>
+<p>相对路径(也就是当前url#后面的内容,不包括参数): <span>{{path}}</span>
+    <button ng-click="changePath()">改变</button>
+</p>
+<p>协议(比如http,https): <span>{{protocol}}</span></p>
+
+<p>主机名: <span>{{host}}</span></p>
+
+<p>端口号: <span>{{port}}</span></p>
+
+<p>哈希值: <span>{{hash}}</span>
+    <button ng-click="changeHash()">改变</button>
+</p>
+</body>
+<script>
+    var locationApp = angular.module('locationApp',[]);
+    locationApp.config(function($locationProvider){
+        $locationProvider.html5Mode(true).hashPrefix('!');
+    });
+    locationApp.controller('locationCtrl',function($scope,$location,$timeout,$rootScope){
+        console.log($location);
+        $scope.location=function(newLocation){
+            return $location.url(newLocation);
+        };
+        $scope.absurl=$location.absUrl();
+        $scope.url=$location.url();
+        $scope.path=$location.path();
+        $scope.protocol=$location.protocol();
+        $scope.host=$location.host();
+        $scope.port=$location.port();
+        $scope.hash=$location.hash();
+        $scope.refresh = function(){
+            $scope.absurl = $location.absUrl();
+            $scope.url = $location.url();
+            $scope.path = $location.path();
+            $scope.hash = $location.hash();
+            $scope.search = $location.search();
+        };
+
+        $scope.changeUrl=function () {
+             $location.url('/foo2?name=bunny2&age=12#myhash2');
+        };
+        $rootScope.$on('$locationChangeSuccess',function(){
+            $scope.refresh();
+            console.log('结束改变$location')
+        });
+
+    })
+</script>
+</html>

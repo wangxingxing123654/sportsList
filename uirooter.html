@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./angularjs/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./angularjs/bootstrap.min.css">
+    <script src="./angularjs/angular.js"></script>
+    <script src="./js/ctrl1.js"></script>
+    <script src="./js/ctrl2.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp">
+        <ul>
+            <li>
+
+                <a href="#/" class="btn btn-primary">main</a>
+                <a href="#/home/1" class="btn btn-primary">home</a>
+                <a href="#/about" class="btn btn-primary">about</a>
+            </li>
+        </ul>
+        <!-- <ui-view name='view1'></ui-view>
+        <ui-view name='view2'></ui-view> -->
+        <ui-view></ui-view>
+        <ui-view ui-sref='about'></ui-view>
+        <ui-view ui-sref='main'></ui-view>
+    </div>
+
+</body>
+<script>
+    var app = angular.module('myApp', ['ui.router', 'myApp.ctrl1', 'myApp.ctrl2']);
+    app.config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider.state({
+                name: 'main',
+                url: '/',
+                views: {
+                    'view1': {
+                        templateUrl: './test.html',
+                        controller: 'ctrl1'
+                    },
+                    'view2': {
+                        templateUrl: './angularjs/app.html',
+                        controller: 'ctrl2'
+                    }
+                }
+
+            })
+            .state({
+                name: 'home',
+                url: '/home',
+                templateUrl: './angularjs/app.html',
+                controller: 'ctrl2'
+            })
+            .state({
+                name: 'home.page',
+                url: '/:page'
+
+            })
+            .state({
+                name: 'about',
+                url: '/about',
+                template: '<div>about</div>',
+
+            })
+        $urlRouterProvider.otherwise('/');
+
+    })
+</script>
+
+</html>

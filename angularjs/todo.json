@@ -1,0 +1,85 @@
+{
+    "results":  [
+        {
+            "objectId":  "OamQqekSZk",
+            "name":  "Kayak",
+            "createdAt":  "2017-09-20T16:51:07.875Z",
+            "updatedAt":  "2017-09-20T16:51:43.216Z",
+            "description":  "A boat for one person",
+            "category":  "Watersports",
+            "price":  "275"
+        },
+        {
+            "objectId":  "9SuVB6ZHVF",
+            "name":  "Lifejacket",
+            "createdAt":  "2017-09-20T16:52:01.808Z",
+            "updatedAt":  "2017-09-20T16:52:37.296Z",
+            "description":  "Protective and fashionable",
+            "category":  "Watersports",
+            "price":  "48.95"
+        },
+        {
+            "objectId":  "OnuCSMqHZR",
+            "name":  "Soccer Ball",
+            "createdAt":  "2017-09-20T16:52:55.257Z",
+            "updatedAt":  "2017-09-20T16:53:24.937Z",
+            "description":  "FIFA-approved size and weight",
+            "category":  "Soccer",
+            "price":  "19.5"
+        },
+        {
+            "objectId":  "Ohk7H9MZGv",
+            "name":  "Corner Flags",
+            "createdAt":  "2017-09-20T16:53:42.400Z",
+            "updatedAt":  "2017-09-20T16:54:10.824Z",
+            "description":  "Give your playing field a professional touch",
+            "category":  "Soccer",
+            "price":  "34.95"
+        },
+        {
+            "objectId":  "AiSy0KbOQc",
+            "name":  "Stadium",
+            "createdAt":  "2017-09-20T16:54:30.440Z",
+            "updatedAt":  "2017-09-20T16:55:01.736Z",
+            "description":  "Flat-packed 35,000-seat stadium",
+            "category":  "Soccer",
+            "price":  "79500"
+        },
+        {
+            "objectId":  "KbDMScEWZX",
+            "name":  "Thinking Cap",
+            "createdAt":  "2017-09-20T16:55:23.464Z",
+            "updatedAt":  "2017-09-20T16:55:58.552Z",
+            "description":  "Improve your brain efficiency by 75%",
+            "category":  "Chess",
+            "price":  "16"
+        },
+        {
+            "objectId":  "AaAByWQriz",
+            "name":  "Unsteady Chair",
+            "createdAt":  "2017-09-20T16:56:15.240Z",
+            "updatedAt":  "2017-09-20T16:56:44.135Z",
+            "description":  "Secretly give your opponent a disadvantage",
+            "category":  "Chess",
+            "price":  "29.95"
+        },
+        {
+            "objectId":  "L14g7FhgHA",
+            "name":  "Human Chess Board",
+            "createdAt":  "2017-09-20T16:56:58.856Z",
+            "updatedAt":  "2017-09-20T16:57:32.737Z",
+            "description":  "A fun game for the family",
+            "price":  "75",
+            "category":  "Chess"
+        },
+        {
+            "objectId":  "JNDBADYNNd",
+            "name":  "Bling-Bling King",
+            "createdAt":  "2017-09-20T16:57:44.257Z",
+            "updatedAt":  "2017-09-20T16:58:14.344Z",
+            "description":  "Gold-plated, diamond-studded King",
+            "category":  "Chess",
+            "price":  "1200"
+        }
+    ]
+}
